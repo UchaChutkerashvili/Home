@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.dark-theme {
+  background-color: #222;
+  color: #fff;
+}
+
+.light-theme {
+  background-color: #fff;
+  color: #333;
+}
