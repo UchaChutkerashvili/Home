@@ -1,0 +1,49 @@
+.headerNavigation {
+    background-color: #333;
+    padding: 20px;
+  }
+  
+  /* CSS for the navigation links */
+  .navLink {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .navLink:hover {
+    color: #ffc107;
+  }
+  
+  /* CSS for the active link */
+  .navLink:active {
+    font-weight: bold;
+  }
+  
+  /* CSS for a cool hover effect */
+  .navLink::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffc107;
+     bottom: auto;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .navLink:hover::before {
+    transform: scaleX(1);
+  }
+  
+  /* CSS for a responsive navigation */
+  @media screen and (max-width: 768px) {
+    .headerNavigation {
+      padding: 10px;
+    }
+    
+    .navLink {
+      margin-right: 10px;
+    }
+  }

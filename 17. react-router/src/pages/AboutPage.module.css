@@ -1,0 +1,12 @@
+
+.div  { 
+    padding: 20px;     
+    text-align: center;
+  }
+
+p {    
+    margin: 2px auto;
+    text-align: left;
+    max-width: 700px;
+    
+}

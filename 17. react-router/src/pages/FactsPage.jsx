@@ -1,0 +1,27 @@
+import React from 'react'
+import { useParams } from 'react-router-dom'
+
+
+const facts = [
+  {id:1, fact: 'When the reader is first introduced to Edmond Dantès, he arrives in Marseille as first mate aboard the merchant ship Le Pharaon (The Pharaoh). At only 19 years old, the young Dantès seems destined for success. Although the trip was successful, the former Captain, Leclère, has fallen ill and died. Dantès relays these events to his patron, M. Morrel, who tells Dantès that he will try to have him named captain. Dantès rushes off to see his father and then his beloved, the young Catalan woman Mercédès, and the two agree to be married immediately.'},
+  {id:2, fact: 'The marriage never occurs, however. On the very night of their nuptial feast, Dantès is arrested as a suspected Bonapartist, a helper to Napoléon, and taken to see the public prosecutor, Gérard de Nortier. Edmond had been anonymously and falsely denounced by Danglars, Edmond\'s shipmate over whom he was promoted, and Fernand Mondego, a rival suitor for Mercédès\' hand. Prosecutor De Villefort concludes that Edmond is innocent, and assures him that he will be released. He then asks for a piece of evidence cited in a letter denouncing Edmond to the authorities. The letter claims that on Edmond\'s last voyage, he made a stopover at the island of Elba, and received a letter from the deposed Emperor Napoléon. Edmond hands over the letter, which he received in the name of Captain Leclère, and of which the contents are unknown to Edmond. De Villefort throws the letter on the fire for the letter is addressed to his father. Once again he promises Edmond\'s speedy release. De Villefort has renounced his father, a staunch Bonapartist, and destroyed the letter to protect himself, not Edmond; to further protect his name, de Villefort sentences Edmond to imprisonment in the dreaded Chateau d\'If, an island fortress from which no prisoner had ever escaped, and to which the most dangerous political prisoners are sent.'},
+  {id:3, fact: 'After six long years in solitary confinement in the dungeons of the Chateau, Edmond decides to commit suicide by starving himself. Fearing he will be forced to eat, he throws out his food in secrecy. After nearly six months, he hears scratching against the wall of his cell. Curiosity about the source of the noise inspires him to begin eating again. He taps on his wall several times, and when the scratching stops, he concludes that it is a prisoner trying to escape. He then uses the saucepan on which his food is served to begin digging where he heard the scratching before in hopes that it was another prisoner digging his way to freedom. Dantès eventually breaks through enough of the wall that he is able to exchange a brief greeting with an old Italian abbé named Faria, sometimes called the "Mad Priest", who had indeed been attempting to dig to freedom.'},
+  {id:4, fact: 'The two prisoners become very close, with the learned priest teaching Dantès all he knows about reading, mathematics, science, languages, philosophy, history, sword fighting, and economics. Together, they determine who betrayed Edmond, and although Faria disapproves, Edmond plans vengeance against his betrayers. The two spend years digging a tunnel to freedom, but Faria dies before they can escape. Before Abbe Faria died, he revealed to Edmond a secret treasure, hidden on the island of Monte Cristo. That night, Edmond exchanges himself for his mentor in the priest\'s bodybag, and escapes from the prison. The jailers, rather than burying prisoners, toss them over the fortress\' wall into the sea, weighted with an iron ball chained around the legs. Using a knife made from a sharpened crucifix, Edmond frees himself and reaches the surface. Edmond swims to a small island nearby to seek refuge from the storm for the night. The next day, he swims out to sea as a smuggling ship passes by and is rescued under the pretense of being a shipwreck victim. Edmond soon suggests a stopover and trading of goods at the small island of Monte Cristo, during which he confirms that Faria\'s treasure exists. On this and subsequent visits, Edmond becomes wealthy.'},
+  {id:5, fact: 'Ucha Chutkerashvili is a future FullStack developer, Wizard of programming, Dream colleague of everyone, Father, Philosopher, Platinum in League of Legends, Conqueror in PUBG, in short all around nice guy.  2523 years ago when he was born, Priest master Lao Shin Hui said: "Damn bruh, this kid ugly". One day he was teaching me In the garden. "You must purify your thoughts. When you think of rain, you must only see rain. Not the trees it land on or the clouds." He instructed. "Thats impossible, I bet even you cant do it." said I. "I will show you how to dedicate your mind to a single thought!" He said and struck the top of my head with flexible branch, which broke my skin like a knife. The pain was unbearable, I could not retain focus. "Ha, your first pure thought, PAIN". "Thats how you will feel one day if you don\'t become a FullStack Zen Master!". "What does the Fullstack even mean?!" I cried. "One day you\'ll understand. One day.."  '}
+]
+
+const ParamPage = () => {
+  const param = useParams()
+  const characterFact = facts.find(f => f.id == param.factId)
+  if(!characterFact){
+    return <div>fact not found</div>
+  }
+  
+  return (
+    <div>
+      <p>{characterFact.fact}</p>
+    </div>
+  )
+}
+
+export default ParamPage
