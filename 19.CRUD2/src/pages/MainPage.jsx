@@ -6,11 +6,11 @@ const MainPage = () => {
     const [userList, setUserList] = useState([]);
   
   useEffect(() => {
-    fetch("/api/v1/users", {
+    fetch("/api/v1/todos", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.REACT_APP_API_KEY}`,
+        Authorization: 'Bearer _UZ_jot69Rmy4A8F9E467LqHoEhJh1TptuL1mKq69zIsy4iCuw',
       }      
     })
     .then((res) => {
@@ -19,8 +19,10 @@ const MainPage = () => {
     })
     .then(data =>  setUserList(data.items.map(user => {
       return {
-        firstName: user.firstName,
-        lastName: user.lastName,
+        date: user.date,
+        name: user.name,
+        lastname: user.lastname,
+        task: user.task,
         id: user._uuid
       }
     })))
@@ -31,7 +33,7 @@ const MainPage = () => {
 
 
   const onDelete = (userId) => {
-    sendRequest(null, `/api/v1/users${userId}`)
+    sendRequest(null, `/api/v1/todos${userId}`)
   }
 
 
@@ -39,9 +41,11 @@ const MainPage = () => {
     <div className="App">
            
 
-      {userList.map((user) => <div key={user.id}>
-        <p>{user.firstName}</p>
-        <p>{user.lastName}</p>
+      {userList.map((user) => <div key={user.id} className='todo-item'>
+        <p className='date'>{user.date}</p>
+        <p className='name'>{user.name}</p>
+        <p className='name'>{user.lastname}</p>
+        <p className='task'>{user.task}</p>
         <Link to={`/update/${user.id}`}>Edit</Link>
         <button onClick={() => onDelete(user.id)}>Delete</button>
       </div> )}

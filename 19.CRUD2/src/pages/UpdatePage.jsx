@@ -8,21 +8,21 @@ const UpdatePage = () => {
   const navigate = useNavigate();
   const { userId } = useParams();
   const { response, loading, error } = useFetch({
-    url: `/api/v1/users/${userId}`,
+    url: `/api/v1/todos/${userId}`,
     method: "GET",
   })
 
 
 
 
-  const onSubmit = (firstName, lastName) => {
-    fetch(`/api/v1/users/${userId}`, {
+  const onSubmit = (date, name, task) => {
+    fetch(`/api/v1/todos/${userId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.REACT_APP_API_KEY}`,
+        "Authorization": `Bearer _UZ_jot69Rmy4A8F9E467LqHoEhJh1TptuL1mKq69zIsy4iCuw`,
       },
-      body: JSON.stringify([{ firstName, lastName }]),
+      body: JSON.stringify([{ date, name, task }]),
     })
       .then((res) => {
         if (!res.ok) throw new Error("Response failed");
@@ -37,8 +37,8 @@ const UpdatePage = () => {
   return (
     <UserForm
       onFormSubmit={onSubmit}
-      firstName={response.firstName}
-      lastName={response.lastName}
+      date={response.date}
+      name={response.name}
     />
   );
 };

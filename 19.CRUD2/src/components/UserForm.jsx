@@ -1,27 +1,41 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
-const UserForm = ({onFormSubmit, firstName, lastName}) => {
-  const firstNameRef = useRef()
-  const lastNameRef = useRef()
+const UserForm = ({onFormSubmit}) => {
+  const [date, setDate] = useState()
+  const [name, setName] = useState()
+  const [lastname, setLastname] = useState()
+  const [task, setTask] = useState()
 
   const onSubmit = (e) => {
     e.preventDefault()
-    onFormSubmit(firstNameRef, lastNameRef)
+    onFormSubmit(date, name, task)
   }
 
   return (
     <form onSubmit={onSubmit}>
       <input
-        type="text"
-        placeholder="firstName"
-        ref={firstNameRef}
-        defaultValue={firstName}
+        type="date"
+        placeholder="date"
+        onChange={e=> setDate(e.target.value)}
+        defaultValue={date}
       />
       <input
         type="text"
-        placeholder="lastName"
-        ref={lastNameRef}
-        defaultValue={lastName}
+        placeholder="first name"
+        onChange={e=> setName(e.target.value)}
+        defaultValue={name}
+      />
+      <input
+        type="text"
+        placeholder="last name"
+        onChange={e=> setLastname(e.target.value)}
+        defaultValue={lastname}
+      />
+      <input
+        type="text"
+        placeholder="task"
+        onChange={e=> setTask(e.target.value)}
+        defaultValue={task}
       />
       <button>Submit</button>
     </form>

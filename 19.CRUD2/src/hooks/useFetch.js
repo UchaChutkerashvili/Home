@@ -11,7 +11,7 @@ const useFetch = ({url, method}) => {
             method,
             headers: {
               "Content-Type": "application/json",
-              "Authorization": `Bearer ${process.env.REACT_APP_API_KEY}`
+              "Authorization": `Bearer _UZ_jot69Rmy4A8F9E467LqHoEhJh1TptuL1mKq69zIsy4iCuw`
             },
           
           })
