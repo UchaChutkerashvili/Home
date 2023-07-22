@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import UserForm from '../components/UserForm'
 import { useNavigate } from 'react-router-dom';
-import { languageDictionary, useLanguageContext } from '../contexts/languageContext';
 
-const CreatePage = () => {
-  const { language } = useLanguageContext()
+const CreatePage = () => {  
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
   
-  const onFormSubmit = (firstName, lastName) => {
+  const onFormSubmit = (firstName, lastName, date, task) => {
     
 
     setLoading(true)
@@ -19,7 +17,7 @@ const CreatePage = () => {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${process.env.REACT_APP_API_KEY}`,
       },
-      body: JSON.stringify([{ firstName, lastName }]),
+      body: JSON.stringify([{ firstName, lastName, date, task }]),
     })
       .then((res) => {
         if (!res.ok) throw new Error("Response failed");

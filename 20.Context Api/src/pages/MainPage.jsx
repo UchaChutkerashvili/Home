@@ -22,6 +22,8 @@ const MainPage = () => {
       return {
         firstName: user.firstName,
         lastName: user.lastName,
+        date: user.date,
+        task: user.task,
         id: user._uuid
       }
     })))
@@ -49,10 +51,12 @@ const MainPage = () => {
   return (
     <div className="App">
            
-
+      <h3>{languageDictionary[language].todoText}</h3>
       {userList.map((user) => <div key={user.id}>
         <p>{user.firstName}</p>
         <p>{user.lastName}</p>
+        <p>{user.date}</p>
+        <p>{user.task} </p>
         <Link to={`/update/${user.id}`}>{languageDictionary[language].textEdit}</Link>
         <button onClick={() => onDelete(user.id)}>{languageDictionary[language].textDelete}</button>
       </div> )}

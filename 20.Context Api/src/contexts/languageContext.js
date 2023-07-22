@@ -8,7 +8,9 @@ export const languageDictionary = {
         MainPageText: 'Main Page',
         CreatePageText: 'Create Page',
         placeholderNameText: 'first Name',
-        placeholderLastNameText: 'last Name'
+        placeholderLastNameText: 'last Name',
+        todoText: 'Todos',
+        taskText: 'task'
       },
       Georgian: {
         textEdit: 'რედაქტირება',
@@ -17,7 +19,9 @@ export const languageDictionary = {
         MainPageText: 'მთავარი გვერდი',
         CreatePageText: 'დამატების გვერდი',
         placeholderNameText: 'სახელი',
-        placeholderLastNameText: 'გვარი'
+        placeholderLastNameText: 'გვარი',
+        todoText: 'შესასრულებელი დავალებები',
+        taskText: 'შესასრულებელი დავალება'
       },
 }
 

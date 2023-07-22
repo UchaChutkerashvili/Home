@@ -15,14 +15,14 @@ const UpdatePage = () => {
 
 console.log(response)
 
-  const onSubmit = (firstName, lastName) => {
+  const onSubmit = (firstName, lastName, date, task) => {
     fetch(`/api/v1/users/${userId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${process.env.REACT_APP_API_KEY}`,
       },
-      body: JSON.stringify({ firstName, lastName }),
+      body: JSON.stringify({ firstName, lastName, date, task }),
     })
       .then((res) => {
         if (!res.ok) throw new Error("Response failed");
@@ -39,6 +39,8 @@ console.log(response)
       onFormSubmit={onSubmit}
       firstNamei={response.firstName}
       lastNamei={response.lastName}
+      datei={response.date}
+      taski={response.task}
     />
   );
 };
