@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { languageDictionary, useLanguageContext } from '../contexts/languageContext';
 
 const MainPage = () => {
+  const {language } = useLanguageContext()
     const [userList, setUserList] = useState([]);
   
   const fetchUserList = () => {
@@ -51,8 +53,8 @@ const MainPage = () => {
       {userList.map((user) => <div key={user.id}>
         <p>{user.firstName}</p>
         <p>{user.lastName}</p>
-        <Link to={`/update/${user.id}`}>Edit</Link>
-        <button onClick={() => onDelete(user.id)}>Delete</button>
+        <Link to={`/update/${user.id}`}>{languageDictionary[language].textEdit}</Link>
+        <button onClick={() => onDelete(user.id)}>{languageDictionary[language].textDelete}</button>
       </div> )}
     </div>
   )

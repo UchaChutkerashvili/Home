@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useLanguageContext } from '../contexts/languageContext'
+import { languageDictionary, useLanguageContext } from '../contexts/languageContext'
 
 const Header = () => {
     const {language, toggleLanguage} = useLanguageContext()
   return (
-    <header>
+    <header >
         <button onClick={toggleLanguage} >{language}</button>
-        <Link to={'/'} >Main Page</Link>
-        <Link to={'/create'} >Create Page</Link>
+        <Link to={'/'} >{languageDictionary[language].MainPageText}</Link>
+        <Link to={'create'} >{languageDictionary[language].CreatePageText}</Link>
          
     </header>
   )

@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import UserForm from '../components/UserForm'
 import { useNavigate } from 'react-router-dom';
+import { languageDictionary, useLanguageContext } from '../contexts/languageContext';
 
 const CreatePage = () => {
+  const { language } = useLanguageContext()
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
   
   const onFormSubmit = (firstName, lastName) => {
+    
+
     setLoading(true)
     fetch("/api/v1/users", {
       method: "POST",
@@ -26,7 +30,12 @@ const CreatePage = () => {
   };
   if(loading) return <p>Loading ..</p>
 
-  return  <UserForm onFormSubmit={onFormSubmit} /> 
+  return  (
+    <div>
+        <UserForm onFormSubmit={onFormSubmit} />
+         
+    </div>
+   )
      
 }
 

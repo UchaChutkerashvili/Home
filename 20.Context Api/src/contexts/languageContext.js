@@ -1,8 +1,24 @@
 import { createContext, useContext, useMemo, useState } from "react"
 
 export const languageDictionary = {
-    English: 'Current language is English',
-    Georgian: 'Current language is Georgian'
+    English: {
+        textEdit: 'Edit',
+        textDelete: 'Delete',
+        submitText: 'submit',
+        MainPageText: 'Main Page',
+        CreatePageText: 'Create Page',
+        placeholderNameText: 'first Name',
+        placeholderLastNameText: 'last Name'
+      },
+      Georgian: {
+        textEdit: 'რედაქტირება',
+        textDelete: 'წაშლა',
+        submitText: 'გაგზავნა',
+        MainPageText: 'მთავარი გვერდი',
+        CreatePageText: 'დამატების გვერდი',
+        placeholderNameText: 'სახელი',
+        placeholderLastNameText: 'გვარი'
+      },
 }
 
 const LanguageContext = createContext(null)
