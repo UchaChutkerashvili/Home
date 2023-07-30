@@ -155,3 +155,14 @@ form button:hover {
   background-color: #0056b3;
 }
   
+
+.App {
+  height: 100vh;
+   
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+

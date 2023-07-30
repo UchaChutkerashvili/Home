@@ -1,0 +1,163 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  
+  /* Styling for the buttons */
+  button, a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Styling for the Edit button (assuming it is an anchor tag) */
+  a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+  }
+  
+  a:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styling for the Delete button */
+  button {
+    color: #fff;
+    background-color: #dc3545;
+  }
+  
+  button:hover {
+    background-color: #c82333;
+  }
+  
+  /* CSS for the todo item container */
+  .todo-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  /* CSS for the date */
+  .todo-item .date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  /* CSS for the name */
+  .todo-item .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* CSS for the task */
+  .todo-item .task {
+    font-size: 16px;
+    color: #444;
+  }
+  
+  /* Optional hover effect */
+  .todo-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* CSS for the form container */
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* CSS for the input fields */
+  form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  
+  
+  /* Styling for the placeholder text */
+  form input::placeholder {
+    color: #999;
+  }
+  
+  /* Optional focus and hover styles for the input fields */
+  form input:focus,
+  form input:hover {
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for the submit button */
+  form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Optional hover effect for the submit button */
+  form button:hover {
+    background-color: #0056b3;
+  }
+    
+  .App.dark {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  
